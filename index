@@ -264,7 +264,7 @@
   <h1>¡Bienvenido al portal de Planes de Mejoramiento!</h1>
 </header>
 <div class="logo-banner">
-  <img src="https://raw.githubusercontent.com/Grupoeducate/Master11/refs/heads/main/MASTER11.png" alt="Master Elite 11">
+  <img src="https://github.com/Grupoeducate/Epsilon11/blob/main/Logo%20Epsilon.png?raw=true" alt="Master Elite 11">
 </div>
 <div class="intro-box">
   <p>Este espacio digital te ofrece un acceso directo a recursos educativos, diseñados meticulosamente para reforzar tus conocimientos y optimizar tu desempeño académico. <b>Nuestra misión </b> es acompañarte en tu trayectoria educativa, transformando cada desafío en una valiosa oportunidad de crecimiento. <br><br> Para comprender cómo te beneficiaremos, es fundamental entender: </p>
@@ -314,27 +314,27 @@
 
   const componentes = {
     matematicas: [
-      { nombre: 'Numérico - Variacional', archivo: 'Pmnumerico', color: '--color-matematicas' },
-      { nombre: 'Geométrico - Métrico', archivo: 'Pmgeometrico', color: '--color-matematicas' },
-      { nombre: 'Aleatorio', archivo: 'PMALEATORIO', color: '--color-matematicas' }
+      { nombre: 'Numérico - Variacional', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Mat-Num.pdf&embedded=true', color: '--color-matematicas' },
+      { nombre: 'Geométrico - Métrico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Mat-Geo.pdf&embedded=true', color: '--color-matematicas' },
+      { nombre: 'Aleatorio', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Mat-Ale.pdf&embedded=true', color: '--color-matematicas' }
     ],
     lenguaje: [
-      { nombre: 'Semántico', archivo: 'PMSEMANTICO', color: '--color-lenguaje' },
-      { nombre: 'Sintáctico', archivo: 'PMSINTACTICO', color: '--color-lenguaje' },
-      { nombre: 'Pragmático', archivo: 'PMPRAGMATICO', color: '--color-lenguaje' }
+      { nombre: 'Semántico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Lec-Sem.pdf&embedded=true', color: '--color-lenguaje' },
+      { nombre: 'Sintáctico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Lec-Sin.pdf&embedded=true', color: '--color-lenguaje' },
+      { nombre: 'Pragmático', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Lec-Prag.pdf&embedded=true', color: '--color-lenguaje' }
     ],
     naturales: [
-      { nombre: 'Entorno Biológico', archivo: 'PMBIOLOGICO', color: '--color-naturales' },
-      { nombre: 'Entorno Químico', archivo: 'PMQUIMICO', color: '--color-naturales' },
-      { nombre: 'Entorno Físico', archivo: 'PMFISICO', color: '--color-naturales' },
-      { nombre: 'Ciencia, Tecnología y Sociedad (CTS)', archivo: 'PMCTS', color: '--color-naturales' }
+      { nombre: 'Entorno Biológico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Nat-Bio.pdf&embedded=true', color: '--color-naturales' },
+      { nombre: 'Entorno Químico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Nat-Qui.pdf&embedded=true', color: '--color-naturales' },
+      { nombre: 'Entorno Físico', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Nat-Fis.pdf&embedded=true', color: '--color-naturales' },
+      { nombre: 'Ciencia, Tecnología y Sociedad (CTS)', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Nat-Cts.pdf&embedded=true', color: '--color-naturales' }
     ],
     sociales: [
-      { nombre: 'Ciencias Sociales', archivo: 'PMSOCIALES', color: '--color-sociales' },
-      { nombre: 'Competencias Ciudadanas', archivo: 'PMCIUDADANA', color: '--color-sociales' }
+      { nombre: 'Ciencias Sociales', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Soc-Soc.pdf&embedded=true', color: '--color-sociales' },
+      { nombre: 'Competencias Ciudadanas', link: 'https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Epsilon11/main/PM-Epsilon%2011-Soc-comp.pdf&embedded=true', color: '--color-sociales' }
     ],
     ingles: [
-      { nombre: 'Trabajemos desde la Parte 1 hasta la Parte 7', archivo: 'PMINGLES', color: '--color-ingles' }
+      { nombre: 'Trabajemos desde la Parte 1 hasta la Parte 7', link: '', color: '--color-ingles' }
     ]
   };
 
@@ -347,7 +347,8 @@
       let html = `<h3 style="margin-bottom:1rem">Componentes del área de ${card.textContent}</h3>`;
       items.forEach(comp => {
         const color = getComputedStyle(document.documentElement).getPropertyValue(comp.color);
-        const link = `https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Master11/main/${comp.archivo}.pdf&embedded=true`;
+        // --- ESTA ES LA LÍNEA MODIFICADA ---
+        const link = comp.link;
         html += `
           <div class="component-item">
             <span>${comp.nombre}</span>
